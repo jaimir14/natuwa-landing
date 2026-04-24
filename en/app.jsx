@@ -314,14 +314,14 @@ function Origin() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <Reveal>
           <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— The Macaw · Soul of the Blend —</span>
+            <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— Our Origin · Natural Way —</span>
             <h2 className="mt-6 font-display text-[#F2E9D8] text-[clamp(38px,5.2vw,72px)] leading-[1.05] tracking-[0.03em] max-w-4xl">
-              <em className="italic text-[#E8CE8C] font-light">Natuwa</em> — Chorotega word for the psittacine birds,
-              <em className="italic text-[#E8CE8C] font-light"> the golden macaw.</em>
+              The expression of <em className="italic text-[#E8CE8C] font-light">nature's purity</em>
+              <br/>in every cup.
             </h2>
             <p className="mt-6 max-w-2xl text-[#F2E9D8]/65 text-[15px] leading-[1.8]">
-              The soul and inspiration behind every bean. Natural Way Coffee pays tribute to this winged guardian
-              through its origin coffee line: the <em className="text-[#E8CE8C] not-italic">Natuwa Blend</em>.
+              Natural Way is more than a name — it's a philosophy. Every bean travels a path without shortcuts,
+              from volcanic soil to your cup, guided by the hand of the forest and the flight of the scarlet macaw.
             </p>
           </div>
         </Reveal>
@@ -335,7 +335,7 @@ function Origin() {
                 <MacawMark className="w-3/5 h-auto" />
               </div>
               <div className="absolute bottom-5 left-0 right-0 text-center">
-                <div className="text-[#C9A24A] text-[10px] tracking-[0.45em] uppercase">Guacamaya Verde</div>
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.45em] uppercase">Natuwa · Scarlet Macaw</div>
               </div>
             </CornerFrame>
           </Reveal>
@@ -344,28 +344,39 @@ function Origin() {
           <div className="lg:col-span-7 space-y-10">
             <Reveal delay={150}>
               <div className="border-l border-[#C9A24A]/40 pl-8">
-                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">I. The Forest</div>
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">I. The Natural Way</div>
                 <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
-                  Our trees grow beneath the canopy of Costa Rica's Guanacaste highlands, shaded by
-                  native laurel and cecropia. The soil is volcanic. The rain is constant. The
-                  coffee is patient.
+                  It all begins in the Guanacaste highlands, at 1,600 meters, where volcanic soil
+                  and constant rain create conditions no laboratory can replicate. Here,
+                  nature sets the rhythm — and we simply listen.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={280}>
               <div className="border-l border-[#C9A24A]/40 pl-8">
-                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">II. The Keeper</div>
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">II. The Forest Guardian</div>
                 <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
-                  The great green macaw is our compass. Where it returns to nest, the ecosystem
-                  is whole. Ten percent of every bag replants its habitat.
+                  The scarlet macaw — <em className="italic text-[#E8CE8C]">Natuwa</em> in the Chorotega language — is our compass.
+                  Where it returns to nest, the ecosystem is whole and the coffee reaches its purest form.
+                  Its flight inspires our name and our promise.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={410}>
+              <div className="border-l border-[#C9A24A]/40 pl-8">
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">III. The Promise</div>
+                <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
+                  Natural Way Coffee exists to preserve the bond between the land and the cup.
+                  No chemicals, no rush, no compromise. We grow under shade, respecting the
+                  canopy the macaw needs to nest — because protecting the forest is protecting the flavor.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={540}>
               <div className="flex items-center gap-6 pt-4">
                 <div className="w-16 h-px bg-[#C9A24A]/60"/>
                 <a href="#process" className="text-[#E8CE8C] text-[11px] tracking-[0.35em] uppercase hover:text-[#F2E9D8] transition-colors flex items-center gap-3 group">
-                  Continue the journey
+                  Discover the process
                   <Ico.Arrow className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
                 </a>
               </div>
@@ -385,7 +396,7 @@ function Process() {
     { n: "II", es: "Selección", en: "The Selection", Icon: Ico.Leaf,
       body: "Beans are hand-sorted on cedar tables. Only those with flawless color and density survive the second pass." },
     { n: "III", es: "Maestría", en: "The Mastery", Icon: Ico.Flame,
-      body: "Roasted in small drums over twelve minutes. Our master roaster has forty years in the craft — and listens for one particular crack." },
+      body: "Roasting is entrusted to an artisan workshop specializing in premium micro-lots. They profile each batch in drum, bean by bean, guided by aroma, color, and that precise crack only a trained ear can distinguish." },
   ];
   return (
     <section id="process" className="relative py-28 md:py-40 bg-[#111915]">
@@ -652,8 +663,8 @@ function Footer() {
             </div>
           </div>
           <p className="mt-6 text-[#F2E9D8]/55 text-[13px] leading-[1.85] max-w-sm">
-            Natural Way Coffee — a family of coffee-growers, roasters, and forest-keepers working out of the
-            Guanacaste highlands since 2019.
+            Natural Way Coffee was born in 2026 with one conviction: to bring together the finest growers, artisan roasters,
+            and forest stewards of Guanacaste to craft a coffee that honors its origin from the very first bean.
           </p>
           {/* Domain justification */}
           <div className="mt-5 border border-[#C9A24A]/20 px-4 py-3 max-w-sm">
@@ -686,13 +697,12 @@ function Footer() {
           </ul>
         </div>
         <div className="md:col-span-3">
-          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Visit</div>
-          <address className="not-italic text-[#F2E9D8]/60 text-[13px] leading-[1.85]">
-            Roastery & Tasting Room<br/>
-            Barrio Escalante, Calle 33<br/>
-            San José, Costa Rica<br/>
-            <a href="mailto:hola@natuwa.cr" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C] pb-0.5 mt-2 inline-block">hola@natuwa.cr</a>
-          </address>
+          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Contact</div>
+          <div className="text-[#F2E9D8]/60 text-[13px] leading-[1.85]">
+            Origin: Guanacaste Highlands<br/>
+            Costa Rica<br/>
+            <a href="mailto:soporte@natuwacr.com" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C] pb-0.5 mt-2 inline-block">soporte@natuwacr.com</a>
+          </div>
         </div>
       </div>
       {/* Legal transparency bar */}

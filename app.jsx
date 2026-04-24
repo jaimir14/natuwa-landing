@@ -314,14 +314,14 @@ function Origin() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <Reveal>
           <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— La Guacamaya · El Alma del Blend —</span>
+            <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— Nuestro Origen · Natural Way —</span>
             <h2 className="mt-6 font-display text-[#F2E9D8] text-[clamp(38px,5.2vw,72px)] leading-[1.05] tracking-[0.03em] max-w-4xl">
-              <em className="italic text-[#E8CE8C] font-light">Natuwa</em> — palabra chorotega para las aves psitácidas,
-              <em className="italic text-[#E8CE8C] font-light"> la lapa dorada.</em>
+              La expresión de la <em className="italic text-[#E8CE8C] font-light">pureza de la naturaleza</em>
+              <br/>en cada taza.
             </h2>
             <p className="mt-6 max-w-2xl text-[#F2E9D8]/65 text-[15px] leading-[1.8]">
-              El alma e inspiración detrás de cada grano. Natural Way Coffee rinde homenaje a este guardián alado
-              en su línea de café de origen: <em className="text-[#E8CE8C] not-italic">Blend Natuwa</em>.
+              Natural Way no es solo un nombre — es una filosofía. Cada grano recorre un camino sin atajos,
+              desde la tierra volcánica hasta tu taza, guiado por la mano del bosque y el vuelo de la lapa roja.
             </p>
           </div>
         </Reveal>
@@ -335,7 +335,7 @@ function Origin() {
                 <MacawMark className="w-3/5 h-auto" />
               </div>
               <div className="absolute bottom-5 left-0 right-0 text-center">
-                <div className="text-[#C9A24A] text-[10px] tracking-[0.45em] uppercase">Guacamaya Verde</div>
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.45em] uppercase">Natuwa · Lapa Roja</div>
               </div>
             </CornerFrame>
           </Reveal>
@@ -344,28 +344,39 @@ function Origin() {
           <div className="lg:col-span-7 space-y-10">
             <Reveal delay={150}>
               <div className="border-l border-[#C9A24A]/40 pl-8">
-                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">I. El Bosque</div>
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">I. El Camino Natural</div>
                 <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
-                  Nuestros árboles crecen bajo el dosel del bosque de Guanacaste, a la sombra de
-                  laureles y cecropias nativos. El suelo es volcánico. La lluvia es constante. El
-                  café es paciente.
+                  Todo comienza en las tierras altas de Guanacaste, a 1,600 metros, donde el suelo volcánico
+                  y la lluvia constante crean las condiciones que ningún laboratorio puede replicar. Aquí,
+                  la naturaleza dicta el ritmo — y nosotros simplemente la escuchamos.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={280}>
               <div className="border-l border-[#C9A24A]/40 pl-8">
-                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">II. El Guardián</div>
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">II. El Guardián del Bosque</div>
                 <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
-                  La gran guacamaya verde es nuestra brújula. Donde regresa a anidar, el ecosistema
-                  está completo. El diez por ciento de cada bolsa replanta su hábitat.
+                  La lapa roja — <em className="italic text-[#E8CE8C]">Natuwa</em> en lengua chorotega — es nuestra brújula.
+                  Donde ella regresa a anidar, el ecosistema está completo y el café alcanza su máxima pureza.
+                  Su vuelo inspira nuestro nombre y nuestra promesa.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={410}>
+              <div className="border-l border-[#C9A24A]/40 pl-8">
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">III. La Promesa</div>
+                <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
+                  Natural Way Coffee existe para preservar ese vínculo entre la tierra y la taza.
+                  Sin químicos, sin prisas, sin compromisos. Cultivamos bajo sombra, respetando el
+                  dosel que la lapa necesita para anidar — porque proteger el bosque es proteger el sabor.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={540}>
               <div className="flex items-center gap-6 pt-4">
                 <div className="w-16 h-px bg-[#C9A24A]/60"/>
                 <a href="#process" className="text-[#E8CE8C] text-[11px] tracking-[0.35em] uppercase hover:text-[#F2E9D8] transition-colors flex items-center gap-3 group">
-                  Continuar el viaje
+                  Descubre el proceso
                   <Ico.Arrow className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
                 </a>
               </div>
@@ -385,7 +396,7 @@ function Process() {
     { n: "II", es: "Selección", en: "El Escogido", Icon: Ico.Leaf,
       body: "Los granos se seleccionan a mano sobre mesas de cedro. Solo aquellos con color y densidad impecables sobreviven la segunda pasada." },
     { n: "III", es: "Maestría", en: "El Dominio", Icon: Ico.Flame,
-      body: "Tostados en pequeños tambores durante doce minutos. Nuestro maestro tostador tiene cuarenta años de oficio — y escucha un crujido particular." },
+      body: "El tueste lo realiza un taller artesanal especializado en micro-lotes de alta gama. Perfilan cada tanda en tambor, grano por grano, guiados por el aroma, el color y ese crujido preciso que solo un oído entrenado distingue." },
   ];
   return (
     <section id="process" className="relative py-28 md:py-40 bg-[#111915]">
@@ -652,8 +663,8 @@ function Footer() {
             </div>
           </div>
           <p className="mt-6 text-[#F2E9D8]/55 text-[13px] leading-[1.85] max-w-sm">
-            Natural Way Coffee — una familia de caficultores, tostadores y guardianes del bosque trabajando desde las
-            tierras altas de Guanacaste desde 2019.
+            Natural Way Coffee nace en 2026 con una convicción: reunir a los mejores caficultores, tostadores artesanales
+            y guardianes del bosque de Guanacaste para crear un café que honre su origen desde el primer grano.
           </p>
           {/* Domain justification */}
           <div className="mt-5 border border-[#C9A24A]/20 px-4 py-3 max-w-sm">
@@ -686,13 +697,12 @@ function Footer() {
           </ul>
         </div>
         <div className="md:col-span-3">
-          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Visítanos</div>
-          <address className="not-italic text-[#F2E9D8]/60 text-[13px] leading-[1.85]">
-            Tostería y Sala de Cata<br/>
-            Barrio Escalante, Calle 33<br/>
-            San José, Costa Rica<br/>
-            <a href="mailto:hola@natuwa.cr" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C] pb-0.5 mt-2 inline-block">hola@natuwa.cr</a>
-          </address>
+          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Contacto</div>
+          <div className="text-[#F2E9D8]/60 text-[13px] leading-[1.85]">
+            Origen: Tierras Altas de Guanacaste<br/>
+            Costa Rica<br/>
+            <a href="mailto:soporte@natuwacr.com" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C] pb-0.5 mt-2 inline-block">soporte@natuwacr.com</a>
+          </div>
         </div>
       </div>
       {/* Legal transparency bar */}
