@@ -149,7 +149,7 @@ function Nav({ onCart }) {
     return () => window.removeEventListener("scroll", onS);
   }, []);
   const links = [
-    ["Home", "#home"], ["Our Origin", "#origin"], ["Process", "#process"], ["Shop", "#shop"], ["Contact", "#contact"]
+    ["Inicio", "#home"], ["Nuestro Origen", "#origin"], ["Proceso", "#process"], ["Tienda", "#shop"], ["Contacto", "#contact"]
   ];
   return (
     <header
@@ -160,7 +160,10 @@ function Nav({ onCart }) {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between h-[72px]">
         <a href="#home" className="flex items-center gap-3 group">
           <MacawMark className="w-7 h-8" />
-          <span className="font-display tracking-[0.35em] text-[12px] text-[#E8CE8C]">NATUWA</span>
+          <div className="flex flex-col">
+            <span className="font-display tracking-[0.28em] text-[11px] text-[#E8CE8C] leading-tight">NATURAL WAY</span>
+            <span className="text-[#C9A24A]/70 text-[7px] tracking-[0.45em] uppercase leading-tight">COFFEE</span>
+          </div>
         </a>
         <nav className="hidden md:flex items-center gap-10">
           {links.map(([label, href]) => (
@@ -217,38 +220,38 @@ function Hero() {
           <Reveal delay={50}>
             <div className="flex items-center gap-3 mb-6">
               <span className="w-10 h-px bg-[#C9A24A]"/>
-              <span className="text-[10px] tracking-[0.4em] uppercase text-[#C9A24A]">Edición Cosecha · 2026</span>
+              <span className="text-[10px] tracking-[0.4em] uppercase text-[#C9A24A]">Natural Way Coffee · Cosecha 2026</span>
             </div>
           </Reveal>
           <Reveal delay={120}>
             <h1 className="font-display text-[#F2E9D8] leading-[0.95] tracking-[0.04em] text-[clamp(44px,6.2vw,92px)]">
-              From the <em className="italic text-[#E8CE8C] font-light">cloud forest</em>,<br/>
-              poured into<br/>
-              your morning.
+              Desde las <em className="italic text-[#E8CE8C] font-light">tierras altas</em>,<br/>
+              vertido en<br/>
+              tu mañana.
             </h1>
           </Reveal>
           <Reveal delay={280}>
             <p className="mt-8 max-w-lg text-[#F2E9D8]/70 text-[15px] leading-[1.7] tracking-[0.01em]">
-              A single-origin Costa Rican coffee, hand-harvested at 1,600&nbsp;meters in the
-              Talamanca highlands. Slow-dried, small-batch roasted, and sealed in gold.
+              Natural Way Coffee presenta <em className="text-[#E8CE8C] not-italic">Blend Natuwa</em> — un café costarricense de origen único, cosechado a mano a 1,600&nbsp;metros en las
+              tierras altas de Guanacaste. Secado lento, tostado en lotes pequeños y sellado en oro.
             </p>
           </Reveal>
           <Reveal delay={420}>
             <div className="mt-10 flex flex-wrap items-center gap-5">
               <GoldButton as="a" href="#shop" variant="solid">
-                Pre-order <Ico.Arrow className="w-3.5 h-3.5"/>
+                Pre-ordenar <Ico.Arrow className="w-3.5 h-3.5"/>
               </GoldButton>
               <GoldButton as="a" href="#origin" variant="outline">
-                Our Origin
+                Nuestro Origen
               </GoldButton>
             </div>
           </Reveal>
           <Reveal delay={600}>
             <div className="mt-14 pt-8 border-t border-[#C9A24A]/20 grid grid-cols-3 gap-6 max-w-md">
               {[
-                ["01", "Altitude", "1,600m"],
+                ["01", "Altitud", "1,600m"],
                 ["02", "Varietal", "Geisha"],
-                ["03", "Roast", "Medium"],
+                ["03", "Tueste", "Medio"],
               ].map(([n, k, v]) => (
                 <div key={n}>
                   <div className="text-[#C9A24A] text-[10px] tracking-[0.3em]">{n}</div>
@@ -272,19 +275,19 @@ function Hero() {
                 className="absolute inset-8 flex items-center justify-center transition-transform duration-300 ease-out will-change-transform"
                 style={{ transform: `perspective(900px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)` }}
               >
-                <img src="assets/bag-mockup.png" alt="Natuwa Café — pouch" className="w-full h-full object-cover" style={{ filter: "contrast(1.02) saturate(1.05)"}}/>
+                <img src="assets/bag-mockup.png" alt="Natural Way Coffee — Blend Natuwa" className="w-full h-full object-cover" style={{ filter: "contrast(1.02) saturate(1.05)"}}/>
                 {/* shimmer overlay */}
                 <div className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-60"
                   style={{ background: "linear-gradient(115deg, transparent 40%, rgba(255,240,200,.22) 50%, transparent 60%)"}}/>
               </div>
               {/* Price badge */}
               <div className="absolute -bottom-6 -right-2 md:-right-8 bg-[#14201C] border border-[#C9A24A]/60 px-5 py-4 text-right">
-                <div className="text-[10px] tracking-[0.3em] uppercase text-[#C9A24A]">250g · Edition</div>
+                <div className="text-[10px] tracking-[0.3em] uppercase text-[#C9A24A]">250g · Edición</div>
                 <div className="mt-1 font-display text-[#F2E9D8] text-[28px] tracking-wide">$38<span className="text-[#C9A24A] text-base align-top">.00</span></div>
               </div>
               {/* scroll cue */}
               <div className="hidden lg:flex absolute -left-16 top-1/2 -translate-y-1/2 flex-col items-center gap-3 text-[#C9A24A]/60">
-                <span className="text-[10px] tracking-[0.4em] uppercase rotate-180" style={{ writingMode: "vertical-rl"}}>Scroll</span>
+                <span className="text-[10px] tracking-[0.4em] uppercase rotate-180" style={{ writingMode: "vertical-rl"}}>Explorar</span>
                 <span className="w-px h-16 bg-gradient-to-b from-[#C9A24A]/60 to-transparent"/>
               </div>
             </div>
@@ -296,7 +299,7 @@ function Hero() {
       <div className="relative border-y border-[#C9A24A]/20 py-4 overflow-hidden">
         <div className="flex gap-16 whitespace-nowrap animate-[marquee_40s_linear_infinite] text-[#C9A24A]/70 text-[11px] tracking-[0.4em] uppercase">
           {Array.from({ length: 2 }).flatMap((_, i) => [
-            "Hand-harvested", "◆", "Talamanca Highlands", "◆", "Small-batch roasted", "◆", "Single-origin", "◆", "Made in Costa Rica", "◆", "Since 2019", "◆",
+            "Natural Way Coffee", "◆", "Blend Natuwa", "◆", "Cosechado a mano", "◆", "Tierras Altas de Guanacaste", "◆", "Tostado en lotes pequeños", "◆", "Origen único", "◆", "Hecho en Costa Rica", "◆",
           ].map((t, j) => <span key={`${i}-${j}`}>{t}</span>))}
         </div>
       </div>
@@ -311,11 +314,15 @@ function Origin() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <Reveal>
           <div className="flex flex-col items-center text-center mb-16">
-            <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— The Macaw —</span>
+            <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— La Guacamaya · El Alma del Blend —</span>
             <h2 className="mt-6 font-display text-[#F2E9D8] text-[clamp(38px,5.2vw,72px)] leading-[1.05] tracking-[0.03em] max-w-4xl">
-              Natuwa, in the language of the Bribri, means
-              <em className="italic text-[#E8CE8C] font-light"> "where nature returns."</em>
+              <em className="italic text-[#E8CE8C] font-light">Natuwa</em> — palabra chorotega para las aves psitácidas,
+              <em className="italic text-[#E8CE8C] font-light"> la lapa dorada.</em>
             </h2>
+            <p className="mt-6 max-w-2xl text-[#F2E9D8]/65 text-[15px] leading-[1.8]">
+              El alma e inspiración detrás de cada grano. Natural Way Coffee rinde homenaje a este guardián alado
+              en su línea de café de origen: <em className="text-[#E8CE8C] not-italic">Blend Natuwa</em>.
+            </p>
           </div>
         </Reveal>
 
@@ -337,20 +344,20 @@ function Origin() {
           <div className="lg:col-span-7 space-y-10">
             <Reveal delay={150}>
               <div className="border-l border-[#C9A24A]/40 pl-8">
-                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">I. The Forest</div>
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">I. El Bosque</div>
                 <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
-                  Our trees grow beneath the canopy of Costa Rica's cloud forest, shaded by
-                  native laurel and cecropia. The soil is volcanic. The rain is constant. The
-                  coffee is patient.
+                  Nuestros árboles crecen bajo el dosel del bosque de Guanacaste, a la sombra de
+                  laureles y cecropias nativos. El suelo es volcánico. La lluvia es constante. El
+                  café es paciente.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={280}>
               <div className="border-l border-[#C9A24A]/40 pl-8">
-                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">II. The Keeper</div>
+                <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">II. El Guardián</div>
                 <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
-                  The great green macaw is our compass. Where it returns to nest, the ecosystem
-                  is whole. Ten percent of every bag replants its habitat.
+                  La gran guacamaya verde es nuestra brújula. Donde regresa a anidar, el ecosistema
+                  está completo. El diez por ciento de cada bolsa replanta su hábitat.
                 </p>
               </div>
             </Reveal>
@@ -358,7 +365,7 @@ function Origin() {
               <div className="flex items-center gap-6 pt-4">
                 <div className="w-16 h-px bg-[#C9A24A]/60"/>
                 <a href="#process" className="text-[#E8CE8C] text-[11px] tracking-[0.35em] uppercase hover:text-[#F2E9D8] transition-colors flex items-center gap-3 group">
-                  Continue the journey
+                  Continuar el viaje
                   <Ico.Arrow className="w-4 h-4 transition-transform group-hover:translate-x-1"/>
                 </a>
               </div>
@@ -373,12 +380,12 @@ function Origin() {
 // ─── Process — Cosecha, Selección, Maestría ───────────────────────────────
 function Process() {
   const steps = [
-    { n: "I", es: "Cosecha", en: "The Harvest", Icon: Ico.Hand,
-      body: "Each cherry is picked by hand at precise ripeness between November and February. Nothing falls, nothing is rushed." },
-    { n: "II", es: "Selección", en: "The Selection", Icon: Ico.Leaf,
-      body: "Beans are hand-sorted on cedar tables. Only those with flawless color and density survive the second pass." },
-    { n: "III", es: "Maestría", en: "The Mastery", Icon: Ico.Flame,
-      body: "Roasted in small drums over twelve minutes. Our master roaster has forty years in the craft — and listens for one particular crack." },
+    { n: "I", es: "Cosecha", en: "La Recolecta", Icon: Ico.Hand,
+      body: "Cada cereza se recoge a mano en su punto exacto de madurez entre noviembre y febrero. Nada se cae, nada se apresura." },
+    { n: "II", es: "Selección", en: "El Escogido", Icon: Ico.Leaf,
+      body: "Los granos se seleccionan a mano sobre mesas de cedro. Solo aquellos con color y densidad impecables sobreviven la segunda pasada." },
+    { n: "III", es: "Maestría", en: "El Dominio", Icon: Ico.Flame,
+      body: "Tostados en pequeños tambores durante doce minutos. Nuestro maestro tostador tiene cuarenta años de oficio — y escucha un crujido particular." },
   ];
   return (
     <section id="process" className="relative py-28 md:py-40 bg-[#111915]">
@@ -387,11 +394,14 @@ function Process() {
           <div className="mb-16 md:mb-24">
             <Divider />
             <div className="mt-14 flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <h2 className="font-display text-[#F2E9D8] text-[clamp(36px,4.8vw,64px)] leading-[1.05] tracking-[0.03em] max-w-2xl">
-                Three acts of <em className="italic text-[#E8CE8C] font-light">discipline.</em>
-              </h2>
+              <div>
+                <h2 className="font-display text-[#F2E9D8] text-[clamp(36px,4.8vw,64px)] leading-[1.05] tracking-[0.03em] max-w-2xl">
+                  Tres actos de <em className="italic text-[#E8CE8C] font-light">disciplina.</em>
+                </h2>
+                <div className="mt-4 text-[#C9A24A]/80 text-[11px] tracking-[0.4em] uppercase">Cosecha, Selección y Maestría — El Camino Natural del Café</div>
+              </div>
               <p className="text-[#F2E9D8]/60 text-[14px] leading-[1.8] max-w-sm">
-                Every bag travels through three hands before it reaches yours. We shortcut nothing.
+                Cada bolsa pasa por tres manos antes de llegar a las tuyas. No tomamos atajos.
               </p>
             </div>
           </div>
@@ -425,18 +435,18 @@ function Process() {
 // ─── Tasting Notes strip ──────────────────────────────────────────────────
 function Notes() {
   const items = [
-    { k: "Aroma", v: "Cocoa, jasmine, fresh cedar" },
-    { k: "Body",  v: "Velvet, medium-full" },
-    { k: "Acidity", v: "Bright — stone fruit" },
-    { k: "Finish", v: "Long, dark honey" },
+    { k: "Aroma", v: "Cacao, jazmín, cedro fresco" },
+    { k: "Cuerpo",  v: "Aterciopelado, medio-pleno" },
+    { k: "Acidez", v: "Brillante — fruta de hueso" },
+    { k: "Final", v: "Largo, miel oscura" },
   ];
   return (
     <section className="relative py-24 border-y border-[#C9A24A]/20">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <Reveal>
           <div className="flex items-baseline justify-between mb-10">
-            <div className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— Tasting Notes —</div>
-            <div className="text-[#F2E9D8]/40 text-[11px] tracking-[0.3em] uppercase">Lot / 0427</div>
+            <div className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— Notas de Cata —</div>
+            <div className="text-[#F2E9D8]/40 text-[11px] tracking-[0.3em] uppercase">Lote / 0427</div>
           </div>
         </Reveal>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#C9A24A]/20">
@@ -457,9 +467,9 @@ function Notes() {
 // ─── Shop ─────────────────────────────────────────────────────────────────
 function Shop({ onAdd }) {
   const products = [
-    { id: "reserva", name: "Reserva del Bosque", sub: "Medium · 250g", price: 38, tag: "Limited" },
-    { id: "cosecha", name: "Cosecha Dorada",      sub: "Light · 250g",  price: 36, tag: "Signature" },
-    { id: "oscura",  name: "Luna Oscura",         sub: "Dark · 250g",   price: 34, tag: "House" },
+    { id: "reserva", name: "Reserva del Bosque", sub: "Medio · 250g", price: 38, tag: "Limitado" },
+    { id: "cosecha", name: "Cosecha Dorada",      sub: "Ligero · 250g",  price: 36, tag: "Firma" },
+    { id: "oscura",  name: "Luna Oscura",         sub: "Oscuro · 250g",   price: 34, tag: "Casa" },
   ];
   const [hover, setHover] = useState(null);
   return (
@@ -467,9 +477,9 @@ function Shop({ onAdd }) {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         <Reveal>
           <div className="text-center mb-16">
-            <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— The Collection —</span>
+            <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— La Colección —</span>
             <h2 className="mt-6 font-display text-[#F2E9D8] text-[clamp(36px,4.8vw,64px)] tracking-[0.03em]">
-              Three roasts, <em className="italic text-[#E8CE8C] font-light">one forest.</em>
+              Tres tuestes, <em className="italic text-[#E8CE8C] font-light">un solo bosque.</em>
             </h2>
           </div>
         </Reveal>
@@ -493,7 +503,8 @@ function Shop({ onAdd }) {
                       <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
                         <MacawMark className="w-[58%] h-auto transition-transform duration-700 group-hover:scale-105" />
                         <div className="mt-4 text-center">
-                          <div className="font-display text-[#C9A24A] text-[11px] tracking-[0.3em]">NATUWA</div>
+                          <div className="font-display text-[#C9A24A] text-[9px] tracking-[0.3em]">NATURAL WAY</div>
+                          <div className="font-display text-[#C9A24A] text-[11px] tracking-[0.3em] mt-0.5">NATUWA</div>
                           <div className="text-[#C9A24A]/70 text-[7px] tracking-[0.3em] mt-1">{p.sub.split(" · ")[0].toUpperCase()}</div>
                         </div>
                       </div>
@@ -517,7 +528,7 @@ function Shop({ onAdd }) {
                     onClick={() => onAdd(p)}
                     className="relative overflow-hidden flex items-center gap-2 text-[#E8CE8C] text-[10px] tracking-[0.35em] uppercase border-b border-[#C9A24A]/60 pb-1 hover:text-[#F2E9D8] transition-colors"
                   >
-                    <span>Add</span>
+                    <span>Añadir</span>
                     <Ico.Plus className="w-3.5 h-3.5"/>
                   </button>
                 </div>
@@ -533,9 +544,9 @@ function Shop({ onAdd }) {
 // ─── Journal (editorial strip) ────────────────────────────────────────────
 function Journal() {
   const items = [
-    { k: "Field Note", t: "A morning with Don Eliseo at the Pérez-Zeledón finca.", d: "Mar 12" },
-    { k: "Roast Log",  t: "Why twelve minutes, and not eleven.", d: "Feb 28" },
-    { k: "Field Note", t: "The macaw counts we do before each harvest.", d: "Jan 05" },
+    { k: "Nota de Campo", t: "Una mañana con Don Eliseo en la finca de Guanacaste.", d: "Mar 12" },
+    { k: "Registro de Tueste",  t: "Por qué doce minutos, y no once.", d: "Feb 28" },
+    { k: "Nota de Campo", t: "Los conteos de guacamayas que hacemos antes de cada cosecha.", d: "Ene 05" },
   ];
   return (
     <section className="relative py-28 bg-[#111915]">
@@ -543,12 +554,12 @@ function Journal() {
         <Reveal>
           <div className="flex items-end justify-between mb-12">
             <div>
-              <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— Journal —</span>
+              <span className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— Diario —</span>
               <h3 className="mt-4 font-display text-[#F2E9D8] text-[clamp(30px,3.4vw,44px)] tracking-[0.03em]">
-                From the <em className="italic text-[#E8CE8C] font-light">finca.</em>
+                Desde la <em className="italic text-[#E8CE8C] font-light">finca.</em>
               </h3>
             </div>
-            <a href="#" className="hidden md:inline-flex items-center gap-3 text-[#E8CE8C] text-[10px] tracking-[0.35em] uppercase border-b border-[#C9A24A]/60 pb-1">All entries <Ico.Arrow className="w-3.5 h-3.5"/></a>
+            <a href="#" className="hidden md:inline-flex items-center gap-3 text-[#E8CE8C] text-[10px] tracking-[0.35em] uppercase border-b border-[#C9A24A]/60 pb-1">Todas las entradas <Ico.Arrow className="w-3.5 h-3.5"/></a>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-10">
@@ -560,7 +571,7 @@ function Journal() {
                     backgroundImage: `repeating-linear-gradient(45deg, #C9A24A 0 1px, transparent 1px 14px)`,
                   }}/>
                   <div className="absolute inset-6 border border-[#C9A24A]/15"/>
-                  <div className="absolute bottom-4 left-4 text-[#C9A24A]/70 text-[9px] tracking-[0.3em] uppercase">Image · {it.k}</div>
+                  <div className="absolute bottom-4 left-4 text-[#C9A24A]/70 text-[9px] tracking-[0.3em] uppercase">Imagen · {it.k}</div>
                 </div>
                 <div className="mt-6 flex items-center justify-between text-[10px] tracking-[0.35em] uppercase text-[#C9A24A]">
                   <span>{it.k}</span><span className="text-[#F2E9D8]/40">{it.d}</span>
@@ -590,10 +601,10 @@ function CTA() {
             <div className="relative text-center">
               <div className="text-[10px] tracking-[0.5em] uppercase text-[#C9A24A]">— Edición Cosecha 2026 —</div>
               <h2 className="mt-6 font-display text-[#F2E9D8] text-[clamp(38px,5.6vw,76px)] leading-[1] tracking-[0.03em]">
-                Reserve your <em className="italic text-[#E8CE8C] font-light">first pour.</em>
+                Reserva tu <em className="italic text-[#E8CE8C] font-light">primera taza.</em>
               </h2>
               <p className="mt-6 max-w-xl mx-auto text-[#F2E9D8]/70 text-[15px] leading-[1.8]">
-                We roast once per quarter. Pre-orders ship from San José the first Monday of each release.
+                Tostamos una vez por trimestre. Las pre-órdenes se envían desde San José el primer lunes de cada lanzamiento.
               </p>
               {!sent ? (
                 <form
@@ -602,22 +613,22 @@ function CTA() {
                 >
                   <input
                     type="email" required value={email} onChange={e => setEmail(e.target.value)}
-                    placeholder="your@email.com"
+                    placeholder="tu@correo.com"
                     className="flex-1 bg-transparent border border-[#C9A24A]/40 focus:border-[#E8CE8C] px-5 py-4 text-[#F2E9D8] placeholder:text-[#F2E9D8]/35 text-[13px] tracking-[0.1em] outline-none transition-colors"
                   />
                   <GoldButton variant="solid">
-                    Reserve <Ico.Arrow className="w-3.5 h-3.5"/>
+                    Reservar <Ico.Arrow className="w-3.5 h-3.5"/>
                   </GoldButton>
                 </form>
               ) : (
                 <div className="mt-10 max-w-lg mx-auto border border-[#C9A24A]/50 px-6 py-5 text-[#E8CE8C] text-[11px] tracking-[0.3em] uppercase">
-                  ✦ Reserved — a confirmation is on its way.
+                  ✦ Reservado — una confirmación va en camino.
                 </div>
               )}
               <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[10px] tracking-[0.35em] uppercase text-[#F2E9D8]/50">
                 <span className="flex items-center gap-2"><Ico.Leaf className="w-3.5 h-3.5 text-[#C9A24A]"/>Rainforest Alliance</span>
-                <span className="flex items-center gap-2"><Ico.Mountain className="w-3.5 h-3.5 text-[#C9A24A]"/>1,600m Altitude</span>
-                <span className="flex items-center gap-2"><Ico.Pin className="w-3.5 h-3.5 text-[#C9A24A]"/>San José, CR</span>
+                <span className="flex items-center gap-2"><Ico.Mountain className="w-3.5 h-3.5 text-[#C9A24A]"/>1,600m de Altitud</span>
+                <span className="flex items-center gap-2"><Ico.Pin className="w-3.5 h-3.5 text-[#C9A24A]"/>Guanacaste, CR</span>
               </div>
             </div>
           </Reveal>
@@ -636,14 +647,20 @@ function Footer() {
           <div className="flex items-center gap-4">
             <MacawMark className="w-10 h-12"/>
             <div>
-              <div className="font-display text-[#E8CE8C] text-[16px] tracking-[0.35em]">NATUWA</div>
-              <div className="text-[#C9A24A]/70 text-[9px] tracking-[0.45em] uppercase">Café · Costa Rica</div>
+              <div className="font-display text-[#E8CE8C] text-[14px] tracking-[0.28em] leading-tight">NATURAL WAY</div>
+              <div className="text-[#C9A24A]/70 text-[9px] tracking-[0.45em] uppercase leading-tight">COFFEE · Costa Rica</div>
             </div>
           </div>
           <p className="mt-6 text-[#F2E9D8]/55 text-[13px] leading-[1.85] max-w-sm">
-            A family of coffee-growers, roasters, and forest-keepers working out of the
-            Talamanca highlands since 2019.
+            Natural Way Coffee — una familia de caficultores, tostadores y guardianes del bosque trabajando desde las
+            tierras altas de Guanacaste desde 2019.
           </p>
+          {/* Domain justification */}
+          <div className="mt-5 border border-[#C9A24A]/20 px-4 py-3 max-w-sm">
+            <p className="text-[#F2E9D8]/45 text-[11px] leading-[1.7] italic">
+              Nuestra casa digital <span className="text-[#E8CE8C] not-italic">natuwacr.com</span> es el espacio donde el camino natural y la esencia ancestral se encuentran.
+            </p>
+          </div>
           <div className="mt-6 flex items-center gap-4 text-[#F2E9D8]/70">
             <a href="#" aria-label="Instagram" className="w-9 h-9 border border-[#C9A24A]/40 hover:border-[#E8CE8C] hover:text-[#E8CE8C] flex items-center justify-center transition-colors"><Ico.IG className="w-4 h-4"/></a>
             <a href="#" aria-label="X" className="w-9 h-9 border border-[#C9A24A]/40 hover:border-[#E8CE8C] hover:text-[#E8CE8C] flex items-center justify-center transition-colors"><Ico.X className="w-4 h-4"/></a>
@@ -651,38 +668,46 @@ function Footer() {
           </div>
         </div>
         <div className="md:col-span-2">
-          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Shop</div>
+          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Tienda</div>
           <ul className="space-y-2 text-[#F2E9D8]/60 text-[13px]">
             <li><a href="#" className="hover:text-[#E8CE8C]">Reserva del Bosque</a></li>
             <li><a href="#" className="hover:text-[#E8CE8C]">Cosecha Dorada</a></li>
             <li><a href="#" className="hover:text-[#E8CE8C]">Luna Oscura</a></li>
-            <li><a href="#" className="hover:text-[#E8CE8C]">Gift sets</a></li>
+            <li><a href="#" className="hover:text-[#E8CE8C]">Sets de regalo</a></li>
           </ul>
         </div>
         <div className="md:col-span-2">
-          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Company</div>
+          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Empresa</div>
           <ul className="space-y-2 text-[#F2E9D8]/60 text-[13px]">
-            <li><a href="#origin" className="hover:text-[#E8CE8C]">Our Origin</a></li>
-            <li><a href="#process" className="hover:text-[#E8CE8C]">Process</a></li>
-            <li><a href="#" className="hover:text-[#E8CE8C]">Journal</a></li>
-            <li><a href="#" className="hover:text-[#E8CE8C]">Wholesale</a></li>
+            <li><a href="#origin" className="hover:text-[#E8CE8C]">Nuestro Origen</a></li>
+            <li><a href="#process" className="hover:text-[#E8CE8C]">Proceso</a></li>
+            <li><a href="#" className="hover:text-[#E8CE8C]">Diario</a></li>
+            <li><a href="#" className="hover:text-[#E8CE8C]">Mayoreo</a></li>
           </ul>
         </div>
         <div className="md:col-span-3">
-          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Visit</div>
+          <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Visítanos</div>
           <address className="not-italic text-[#F2E9D8]/60 text-[13px] leading-[1.85]">
-            Roastery & Tasting Room<br/>
+            Tostería y Sala de Cata<br/>
             Barrio Escalante, Calle 33<br/>
             San José, Costa Rica<br/>
             <a href="mailto:hola@natuwa.cr" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C] pb-0.5 mt-2 inline-block">hola@natuwa.cr</a>
           </address>
         </div>
       </div>
-      <div className="mt-16 pt-6 border-t border-[#C9A24A]/15 max-w-[1400px] mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      {/* Legal transparency bar */}
+      <div className="mt-10 max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="border border-[#C9A24A]/15 px-6 py-3 text-center">
+          <p className="text-[#F2E9D8]/40 text-[10px] tracking-[0.25em] leading-[1.7]">
+            Natural Way Coffee es la marca oficial operada bajo el dominio <span className="text-[#E8CE8C]">natuwacr.com</span>
+          </p>
+        </div>
+      </div>
+      <div className="mt-8 pt-6 border-t border-[#C9A24A]/15 max-w-[1400px] mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3 text-[10px] tracking-[0.35em] uppercase text-[#F2E9D8]/45">
-          <span>©</span><span>2026 Natuwa Café, S.A.</span>
+          <span>©</span><span>2026 Natural Way Coffee, S.A.</span>
           <span className="text-[#C9A24A]">◆</span>
-          <span>All rights reserved</span>
+          <span>Todos los derechos reservados</span>
         </div>
         <div className="flex items-center gap-2 text-[10px] tracking-[0.4em] uppercase">
           <span className="text-[#C9A24A]">✦</span>
@@ -702,13 +727,13 @@ function CartDrawer({ open, onClose, items, onRemove }) {
       <div className="absolute inset-0 bg-black/60" onClick={onClose}/>
       <aside className={`absolute top-0 right-0 h-full w-full max-w-md bg-[#0F1713] border-l border-[#C9A24A]/25 p-8 transition-transform duration-500 ${open ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex items-center justify-between">
-          <div className="text-[#C9A24A] text-[11px] tracking-[0.4em] uppercase">Your Reserve</div>
+          <div className="text-[#C9A24A] text-[11px] tracking-[0.4em] uppercase">Tu Reserva</div>
           <button onClick={onClose} className="text-[#F2E9D8]/70 hover:text-[#E8CE8C]"><Ico.X className="w-5 h-5"/></button>
         </div>
         <div className="mt-10 space-y-6">
           {items.length === 0 && (
             <div className="text-[#F2E9D8]/40 text-[13px] leading-relaxed border border-[#C9A24A]/20 p-6">
-              Your reserve is empty. Choose a roast from the collection.
+              Tu reserva está vacía. Elige un tueste de la colección.
             </div>
           )}
           {items.map((p, idx) => (
@@ -719,7 +744,7 @@ function CartDrawer({ open, onClose, items, onRemove }) {
               </div>
               <div className="text-right">
                 <div className="font-display text-[#E8CE8C] text-[18px]">${p.price}</div>
-                <button onClick={() => onRemove(idx)} className="mt-1 text-[#F2E9D8]/50 text-[10px] tracking-[0.3em] uppercase hover:text-[#E8CE8C]">Remove</button>
+                <button onClick={() => onRemove(idx)} className="mt-1 text-[#F2E9D8]/50 text-[10px] tracking-[0.3em] uppercase hover:text-[#E8CE8C]">Quitar</button>
               </div>
             </div>
           ))}
@@ -729,7 +754,7 @@ function CartDrawer({ open, onClose, items, onRemove }) {
             <div className="text-[#F2E9D8]/60 text-[11px] tracking-[0.3em] uppercase">Subtotal</div>
             <div className="font-display text-[#F2E9D8] text-[22px]">${total}.00</div>
           </div>
-          <GoldButton className="w-full" variant="solid">Checkout <Ico.Arrow className="w-3.5 h-3.5"/></GoldButton>
+          <GoldButton className="w-full" variant="solid">Pagar <Ico.Arrow className="w-3.5 h-3.5"/></GoldButton>
         </div>
       </aside>
     </div>
