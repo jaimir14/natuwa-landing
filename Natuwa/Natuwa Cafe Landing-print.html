@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Natuwa Café — Cosecha, Selección y Maestría</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          sans: ['Inter', 'ui-sans-serif', 'system-ui']
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html, body { background: #14201C; color: #F2E9D8; }
+  body { font-family: Inter, ui-sans-serif, system-ui; -webkit-font-smoothing: antialiased; }
+  ::selection { background: #C9A24A; color: #14201C; }
+
+  /* subtle paper/grain (kept but very subtle for print) */
+  body::before {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    opacity: .06; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='7'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .font-display { letter-spacing: 0.02em; }
+
+  /* ─── Print-ready overrides ─────────────────────────────────────── */
+  /* Force scroll-reveal elements to be visible immediately (no observer waits) */
+  .print-reveal-force [style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }
+
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 10mm;
+    }
+    html, body {
+      background: #14201C !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Kill the fixed nav (it's a floating overlay that would repeat) */
+    header.fixed { display: none !important; }
+    /* Remove hero top padding that existed to clear the fixed nav */
+    #home { padding-top: 0 !important; min-height: 0 !important; }
+
+    /* Stop animations, show everything */
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    [style*="translateY"] { transform: none !important; }
+    [style*="opacity: 0"] { opacity: 1 !important; }
+
+    /* Sections: tighten padding for print */
+    section { padding-top: 36px !important; padding-bottom: 36px !important; }
+
+    /* Avoid awkward breaks */
+    h1, h2, h3 { break-after: avoid; }
+    img, svg, .aspect-\[4\/5\], .aspect-\[3\/4\], .aspect-\[16\/10\] {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Start major sections on a new page for cleaner pagination */
+    #origin, #process, #shop, #contact { break-before: page; }
+
+    /* Cart drawer (invisible when closed) — force fully hidden */
+    .fixed.inset-0.z-\[60\] { display: none !important; }
+
+    /* Marquee: keep static */
+    .animate-\[marquee_40s_linear_infinite\] { animation: none !important; }
+
+    /* Remove scroll-cue, sticky rollover states */
+    html { scroll-behavior: auto !important; }
+
+    /* Constrain hero columns to stack cleanly on A4 */
+    .min-h-screen { min-height: 0 !important; }
+  }
+
+  /* Screen preview: remove sticky/fixed so it reads as a long doc */
+  @media screen {
+    header.fixed { position: static !important; background: #14201C !important; border-bottom: 1px solid rgba(201,162,74,0.2); }
+    #home { padding-top: 0 !important; min-height: 0 !important; }
+  }
+</style>
+</head>
+<body class="print-reveal-force">
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="app.jsx"></script>
+
+<!-- After JSX is parsed, force all Reveal elements visible, wait for fonts, then print -->
+<script type="text/babel">
+  (async () => {
+    // Wait for React to mount
+    const waitForRoot = () => new Promise(resolve => {
+      const check = () => {
+        if (document.querySelector('#root').children.length > 0) resolve();
+        else setTimeout(check, 50);
+      };
+      check();
+    });
+    await waitForRoot();
+
+    // Force-reveal any elements still animating in
+    document.querySelectorAll('[style*="opacity: 0"], [style*="translateY"]').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+
+    // Wait for fonts
+    if (document.fonts && document.fonts.ready) {
+      await document.fonts.ready;
+    }
+
+    // Wait for images inside the root
+    const imgs = Array.from(document.images);
+    await Promise.all(imgs.map(img =>
+      img.complete ? Promise.resolve() :
+      new Promise(res => { img.onload = img.onerror = res; })
+    ));
+
+    // Extra safety delay
+    await new Promise(r => setTimeout(r, 700));
+
+    // One more sweep in case IntersectionObserver set inline styles after our first sweep
+    document.querySelectorAll('[style*="opacity: 0"], [style*="translateY"]').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+
+    window.print();
+  })();
+</script>
+</body>
+</html>
