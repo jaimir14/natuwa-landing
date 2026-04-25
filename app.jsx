@@ -139,7 +139,7 @@ function Divider({ ornament = true }) {
 }
 
 // ─── Nav ──────────────────────────────────────────────────────────────────
-function Nav({ onCart }) {
+function Nav({ onCart, cartCount = 0 }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -177,7 +177,9 @@ function Nav({ onCart }) {
           <button aria-label="Search" className="hidden md:block hover:text-[#E8CE8C] transition-colors"><Ico.Search className="w-[18px] h-[18px]"/></button>
           <button aria-label="Cart" onClick={onCart} className="relative hover:text-[#E8CE8C] transition-colors">
             <Ico.Bag className="w-[18px] h-[18px]"/>
-            <span className="absolute -top-1.5 -right-2 w-4 h-4 rounded-full bg-[#C9A24A] text-[#14201C] text-[9px] font-semibold flex items-center justify-center">0</span>
+            {cartCount > 0 && (
+              <span className="absolute -top-1.5 -right-2 w-4 h-4 rounded-full bg-[#C9A24A] text-[#14201C] text-[9px] font-semibold flex items-center justify-center">{cartCount}</span>
+            )}
           </button>
           {/* Language Switcher */}
           {(() => {
@@ -262,15 +264,15 @@ function Hero() {
           </Reveal>
           <Reveal delay={120}>
             <h1 className="font-display text-[#F2E9D8] leading-[0.95] tracking-[0.04em] text-[clamp(44px,6.2vw,92px)]">
-              Desde las <em className="italic text-[#E8CE8C] font-light">tierras altas</em>,<br/>
+              Desde las <em className="italic text-[#E8CE8C] font-light">montañas</em>,<br/>
               vertido en<br/>
               tu mañana.
             </h1>
           </Reveal>
           <Reveal delay={280}>
             <p className="mt-8 max-w-lg text-[#F2E9D8]/70 text-[15px] leading-[1.7] tracking-[0.01em]">
-              Natural Way Coffee presenta <em className="text-[#E8CE8C] not-italic">Blend Natuwa</em> — un café costarricense de origen único, cosechado a mano a 1,600&nbsp;metros en las
-              tierras altas de Guanacaste. Secado lento, tostado en lotes pequeños y sellado en oro.
+              Natural Way Coffee presenta <em className="text-[#E8CE8C] not-italic">Blend Natuwa</em> — un café costarricense de origen único, cosechado a mano a 1,000&nbsp;metros en las
+              montañas de Nandayure. Secado lento, tostado en lotes pequeños y sellado en oro.
             </p>
           </Reveal>
           <Reveal delay={420}>
@@ -286,7 +288,7 @@ function Hero() {
           <Reveal delay={600}>
             <div className="mt-14 pt-8 border-t border-[#C9A24A]/20 grid grid-cols-3 gap-6 max-w-md">
               {[
-                ["01", "Altitud", "1,600m"],
+                ["01", "Altitud", "1,000m"],
                 ["02", "Varietal", "Geisha"],
                 ["03", "Tueste", "Medio"],
               ].map(([n, k, v]) => (
@@ -336,7 +338,7 @@ function Hero() {
       <div className="relative border-y border-[#C9A24A]/20 py-4 overflow-hidden">
         <div className="flex gap-16 whitespace-nowrap animate-[marquee_40s_linear_infinite] text-[#C9A24A]/70 text-[11px] tracking-[0.4em] uppercase">
           {Array.from({ length: 2 }).flatMap((_, i) => [
-            "Natural Way Coffee", "◆", "Blend Natuwa", "◆", "Cosechado a mano", "◆", "Tierras Altas de Guanacaste", "◆", "Tostado en lotes pequeños", "◆", "Origen único", "◆", "Hecho en Costa Rica", "◆",
+            "Natural Way Coffee", "◆", "Blend Natuwa", "◆", "Cosechado a mano", "◆", "Montañas de Nandayure", "◆", "Tostado en lotes pequeños", "◆", "Origen único", "◆", "Hecho en Costa Rica", "◆",
           ].map((t, j) => <span key={`${i}-${j}`}>{t}</span>))}
         </div>
       </div>
@@ -383,7 +385,7 @@ function Origin() {
               <div className="border-l border-[#C9A24A]/40 pl-8">
                 <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-3">I. El Camino Natural</div>
                 <p className="text-[#F2E9D8]/80 text-[16px] leading-[1.85] max-w-xl">
-                  Todo comienza en las tierras altas de Guanacaste, a 1,600 metros, donde el suelo volcánico
+                  Todo comienza en las montañas de Nandayure, a 1,000 metros, donde el suelo volcánico
                   y la lluvia constante crean las condiciones que ningún laboratorio puede replicar. Aquí,
                   la naturaleza dicta el ritmo — y nosotros simplemente la escuchamos.
                 </p>
@@ -675,7 +677,7 @@ function CTA() {
               )}
               <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[10px] tracking-[0.35em] uppercase text-[#F2E9D8]/50">
                 <span className="flex items-center gap-2"><Ico.Leaf className="w-3.5 h-3.5 text-[#C9A24A]"/>Rainforest Alliance</span>
-                <span className="flex items-center gap-2"><Ico.Mountain className="w-3.5 h-3.5 text-[#C9A24A]"/>1,600m de Altitud</span>
+                <span className="flex items-center gap-2"><Ico.Mountain className="w-3.5 h-3.5 text-[#C9A24A]"/>1,000m de Altitud</span>
                 <span className="flex items-center gap-2"><Ico.Pin className="w-3.5 h-3.5 text-[#C9A24A]"/>Guanacaste, CR</span>
               </div>
             </div>
@@ -688,7 +690,9 @@ function CTA() {
 
 // ─── Footer ───────────────────────────────────────────────────────────────
 function Footer() {
+  const [policiesOpen, setPoliciesOpen] = useState(false);
   return (
+    <>
     <footer id="contact" className="relative border-t border-[#C9A24A]/20 pt-20 pb-10 bg-[#0F1713]">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
@@ -729,14 +733,14 @@ function Footer() {
           <ul className="space-y-2 text-[#F2E9D8]/60 text-[13px]">
             <li><a href="#origin" className="hover:text-[#E8CE8C]">Nuestro Origen</a></li>
             <li><a href="#process" className="hover:text-[#E8CE8C]">Proceso</a></li>
-            <li><a href="#" className="hover:text-[#E8CE8C]">Diario</a></li>
             <li><a href="#" className="hover:text-[#E8CE8C]">Mayoreo</a></li>
+            <li><button onClick={(e) => { e.preventDefault(); setPoliciesOpen(true); }} className="hover:text-[#E8CE8C] text-left">Políticas y Términos</button></li>
           </ul>
         </div>
         <div className="md:col-span-3">
           <div className="text-[#C9A24A] text-[10px] tracking-[0.4em] uppercase mb-4">Contacto</div>
           <div className="text-[#F2E9D8]/60 text-[13px] leading-[1.85]">
-            Origen: Tierras Altas de Guanacaste<br/>
+            Origen: Montañas de Nandayure<br/>
             Costa Rica<br/>
             <a href="mailto:soporte@natuwacr.com" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C] pb-0.5 mt-2 inline-block">soporte@natuwacr.com</a>
           </div>
@@ -763,46 +767,205 @@ function Footer() {
         </div>
       </div>
     </footer>
+    {/* Policies Modal */}
+    {policiesOpen && (
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setPoliciesOpen(false)}></div>
+        <div className="relative bg-[#111915] border border-[#C9A24A]/30 max-w-3xl w-full max-h-[85vh] overflow-y-auto p-8 md:p-12 shadow-2xl">
+          <button onClick={() => setPoliciesOpen(false)} className="absolute top-6 right-6 text-[#F2E9D8]/50 hover:text-[#E8CE8C] transition-colors"><Ico.X className="w-6 h-6"/></button>
+          <div className="text-[#C9A24A] text-[11px] tracking-[0.4em] uppercase mb-8 border-b border-[#C9A24A]/20 pb-4">Políticas y Términos de la Tienda</div>
+          <div className="space-y-8 text-[#F2E9D8]/70 text-[14px] leading-relaxed">
+            
+            <div>
+              <h3 className="text-[#E8CE8C] font-display text-xl mb-3">1. Política de Envíos</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Cobertura:</strong> Envíos exclusivos en <strong>Liberia, Guanacaste</strong>. No realizamos envíos nacionales ni internacionales por el momento.</li>
+                <li><strong>Tiempos:</strong> 1 a 2 días hábiles tras confirmar el pago (lunes a viernes).</li>
+                <li><strong>Entregas Fallidas:</strong> El repartidor tendrá un tiempo de espera máximo de 15 minutos. Si no es posible localizar al cliente, la orden retornará y la reprogramación incurrirá en costos de envío adicionales.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-[#E8CE8C] font-display text-xl mb-3">2. Devoluciones y Reclamos</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Café (Perecedero):</strong> Por inocuidad alimentaria, no aceptamos devoluciones. Solo aplica si el producto enviado es incorrecto o presenta daños severos de fábrica en el empaque.</li>
+                <li><strong>Reclamos:</strong> Todo reclamo por daño debe reportarse a <a href="mailto:soporte@natuwacr.com" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C]">soporte@natuwacr.com</a> en un plazo de 48 horas tras recibir el pedido, adjuntando fotografías probatorias.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-[#E8CE8C] font-display text-xl mb-3">3. Garantías de Equipos (Brewing Tools)</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Los equipos y accesorios cuentan con garantía contra <strong>defectos de fabricación</strong>.</li>
+                <li><strong>Exclusiones:</strong> La garantía se anula por desgaste de uso normal, caídas, mala limpieza, o uso inadecuado.</li>
+                <li>Para devoluciones de productos sin defecto (insatisfacción), se cuenta con 15 días naturales. El equipo debe estar sin uso, en su empaque original intacto. El envío de retorno corre por cuenta del cliente.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-[#E8CE8C] font-display text-xl mb-3">4. Reembolsos y Disponibilidad</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>En caso de agotar existencias, se contactará al cliente para ofrecer una alternativa, tiempo estimado de entrega, o un reembolso total.</li>
+                <li>Los reembolsos toman de <strong>5 a 10 días hábiles</strong> en verse reflejados.</li>
+                <li>Los costos de envío originales no son reembolsables.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-[#E8CE8C] font-display text-xl mb-3">5. Uso del Sitio y Privacidad</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Propiedad Intelectual:</strong> Todo el contenido de este sitio (textos, logos, fotografías) es propiedad exclusiva de Natural Way Coffee. Queda prohibida su reproducción para fines comerciales.</li>
+                <li><strong>Privacidad:</strong> Los datos del cliente (nombre, dirección, email, teléfono) se manejarán con absoluta confidencialidad exclusivamente para procesar su orden.</li>
+                <li>Nos reservamos el derecho de modificar estas políticas en cualquier momento sin previo aviso. El uso de esta página implica su aceptación.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 }
 
 // ─── Cart drawer (tiny) ───────────────────────────────────────────────────
-function CartDrawer({ open, onClose, items, onRemove }) {
+function CartDrawer({ open, onClose, items, onRemove, onClear }) {
+  const [isCheckout, setIsCheckout] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
   const total = items.reduce((a, b) => a + b.price, 0);
+
+  useEffect(() => {
+    if (!open) {
+      setIsCheckout(false);
+      setSubmitStatus(null);
+    }
+  }, [open]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    const form = e.currentTarget;
+    try {
+      const formData = new FormData(form);
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setSubmitStatus('success');
+        form.reset();
+        if (onClear) onClear();
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(data.message || 'Error al enviar');
+      }
+    } catch (err) {
+      setSubmitStatus('error');
+      setErrorMessage('Ocurrió un error. Por favor intente de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className={`fixed inset-0 z-[60] transition-opacity duration-500 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
       <div className="absolute inset-0 bg-black/60" onClick={onClose}/>
-      <aside className={`absolute top-0 right-0 h-full w-full max-w-md bg-[#0F1713] border-l border-[#C9A24A]/25 p-8 transition-transform duration-500 ${open ? "translate-x-0" : "translate-x-full"}`}>
-        <div className="flex items-center justify-between">
-          <div className="text-[#C9A24A] text-[11px] tracking-[0.4em] uppercase">Tu Reserva</div>
+      <aside className={`absolute top-0 right-0 h-full w-full max-w-md bg-[#0F1713] border-l border-[#C9A24A]/25 p-8 transition-transform duration-500 flex flex-col ${open ? "translate-x-0" : "translate-x-full"}`}>
+        
+        <div className="flex items-center justify-between shrink-0 mb-6">
+          <div className="text-[#C9A24A] text-[11px] tracking-[0.4em] uppercase">
+            {isCheckout ? "Finalizar Pedido" : "Tu Reserva"}
+          </div>
           <button onClick={onClose} className="text-[#F2E9D8]/70 hover:text-[#E8CE8C]"><Ico.X className="w-5 h-5"/></button>
         </div>
-        <div className="mt-10 space-y-6">
-          {items.length === 0 && (
-            <div className="text-[#F2E9D8]/40 text-[13px] leading-relaxed border border-[#C9A24A]/20 p-6">
-              Tu reserva está vacía. Elige un tueste de la colección.
+        
+        <div className="mt-2 flex-1 overflow-y-auto space-y-6 pr-2">
+          {!isCheckout ? (
+            <>
+              {items.length === 0 && (
+                <div className="text-[#F2E9D8]/40 text-[13px] leading-relaxed border border-[#C9A24A]/20 p-6">
+                  Tu reserva está vacía. Elige un tueste de la colección.
+                </div>
+              )}
+              {items.map((p, idx) => (
+                <div key={idx} className="flex items-start justify-between gap-4 border-b border-[#C9A24A]/15 pb-5">
+                  <div>
+                    <div className="font-display text-[#F2E9D8] text-[18px]">{p.name}</div>
+                    <div className="text-[#F2E9D8]/50 text-[11px] tracking-[0.3em] uppercase mt-1">{p.sub}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="font-display text-[#E8CE8C] text-[18px]">${p.price}</div>
+                    <button onClick={() => onRemove(idx)} className="mt-1 text-[#F2E9D8]/50 text-[10px] tracking-[0.3em] uppercase hover:text-[#E8CE8C]">Quitar</button>
+                  </div>
+                </div>
+              ))}
+            </>
+          ) : (
+            <div className="pb-6">
+              <div className="text-[#F2E9D8]/60 text-[13px] mb-8 leading-relaxed">
+                Completa tus datos para coordinar el pago y la entrega. Tu pedido incluye {items.length} producto(s).
+              </div>
+              <form id="order-form" onSubmit={handleSubmit} className="space-y-6">
+                {submitStatus === 'success' && (
+                  <div className="flex items-center gap-3 rounded-sm border border-green-500/40 bg-green-500/10 px-4 py-3 text-[12px] text-green-400">
+                    <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span>¡Pedido enviado! Nos pondremos en contacto a la brevedad.</span>
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-3 rounded-sm border border-red-500/40 bg-red-500/10 px-4 py-3 text-[12px] text-red-400">
+                    <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+                <input type="hidden" name="access_key" value="519d0b3b-0767-42fa-94ed-5b31a27514a3" />
+                <input type="hidden" name="subject" value="Nuevo Pedido - Natural Way Coffee" />
+                <input type="hidden" name="order_items" value={items.map(i => `${i.name} ($${i.price})`).join(' | ')} />
+                <input type="hidden" name="order_total" value={`$${total}.00`} />
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+                
+                <input type="text" name="name" required placeholder="Nombre completo" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
+                <input type="email" name="email" required placeholder="Correo electrónico" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
+                
+                <input type="tel" name="phone" required placeholder="Teléfono (con código de país, ej. +506)" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
+                
+                <textarea name="message" placeholder="Comentarios o dirección (solo Liberia)..." rows="2" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors resize-none"></textarea>
+              </form>
             </div>
           )}
-          {items.map((p, idx) => (
-            <div key={idx} className="flex items-start justify-between gap-4 border-b border-[#C9A24A]/15 pb-5">
-              <div>
-                <div className="font-display text-[#F2E9D8] text-[18px]">{p.name}</div>
-                <div className="text-[#F2E9D8]/50 text-[11px] tracking-[0.3em] uppercase mt-1">{p.sub}</div>
-              </div>
-              <div className="text-right">
-                <div className="font-display text-[#E8CE8C] text-[18px]">${p.price}</div>
-                <button onClick={() => onRemove(idx)} className="mt-1 text-[#F2E9D8]/50 text-[10px] tracking-[0.3em] uppercase hover:text-[#E8CE8C]">Quitar</button>
-              </div>
-            </div>
-          ))}
         </div>
-        <div className="absolute bottom-8 left-8 right-8 border-t border-[#C9A24A]/30 pt-6">
+
+        <div className="shrink-0 border-t border-[#C9A24A]/30 pt-6 mt-4">
           <div className="flex items-center justify-between mb-4">
             <div className="text-[#F2E9D8]/60 text-[11px] tracking-[0.3em] uppercase">Subtotal</div>
             <div className="font-display text-[#F2E9D8] text-[22px]">${total}.00</div>
           </div>
-          <GoldButton className="w-full" variant="solid">Pagar <Ico.Arrow className="w-3.5 h-3.5"/></GoldButton>
+          
+          {!isCheckout ? (
+            <button 
+              disabled={items.length === 0}
+              onClick={() => setIsCheckout(true)}
+              className={`w-full text-[11px] tracking-[0.2em] uppercase py-4 font-semibold transition-colors flex justify-center items-center gap-2 ${items.length > 0 ? "bg-[#C9A24A] hover:bg-[#E8CE8C] text-[#111915]" : "border border-[#C9A24A]/30 text-[#C9A24A]/40"}`}
+            >
+              {items.length > 0 ? "Proceder al Pago" : "Tu carrito está vacío"}
+              {items.length > 0 && <Ico.Arrow className="w-3.5 h-3.5"/>}
+            </button>
+          ) : (
+            <div className="flex gap-3">
+              <button disabled={isSubmitting} onClick={() => setIsCheckout(false)} className="w-1/3 border border-[#C9A24A]/30 hover:border-[#C9A24A] text-[#C9A24A] text-[10px] tracking-[0.2em] uppercase py-4 font-semibold transition-colors disabled:opacity-50">
+                Atrás
+              </button>
+              <button disabled={isSubmitting} form="order-form" type="submit" className="flex-1 bg-[#C9A24A] hover:bg-[#E8CE8C] text-[#111915] text-[11px] tracking-[0.2em] uppercase py-4 font-semibold transition-colors flex justify-center items-center gap-2 disabled:opacity-50">
+                {isSubmitting ? "Enviando..." : "Confirmar"} {!isSubmitting && <Ico.Arrow className="w-3.5 h-3.5"/>}
+              </button>
+            </div>
+          )}
         </div>
+
       </aside>
     </div>
   );
@@ -814,7 +977,7 @@ function App() {
   const [cart, setCart] = useState([]);
   return (
     <div className="relative">
-      <Nav onCart={() => setCartOpen(true)} />
+      <Nav onCart={() => setCartOpen(true)} cartCount={cart.length} />
       <Hero />
       <Origin />
       <Process />
@@ -826,6 +989,7 @@ function App() {
       <CartDrawer
         open={cartOpen} onClose={() => setCartOpen(false)}
         items={cart} onRemove={(i) => setCart(c => c.filter((_, idx) => idx !== i))}
+        onClear={() => setCart([])}
       />
     </div>
   );
