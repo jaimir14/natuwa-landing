@@ -179,6 +179,43 @@ function Nav({ onCart }) {
             <Ico.Bag className="w-[18px] h-[18px]"/>
             <span className="absolute -top-1.5 -right-2 w-4 h-4 rounded-full bg-[#C9A24A] text-[#14201C] text-[9px] font-semibold flex items-center justify-center">0</span>
           </button>
+          {/* Language Switcher */}
+          {(() => {
+            const [langOpen, setLangOpen] = useState(false);
+            return (
+              <div className="relative">
+                <button
+                  aria-label="Cambiar idioma"
+                  onClick={() => setLangOpen(o => !o)}
+                  className="hover:text-[#E8CE8C] transition-colors flex items-center gap-1"
+                >
+                  <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M2 12h20"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/>
+                  </svg>
+                </button>
+                {langOpen && (
+                  <div className="absolute right-0 top-full mt-3 bg-[#1B2621] border border-[#C9A24A]/30 shadow-xl min-w-[160px] py-2 z-50">
+                    <a
+                      href="/"
+                      className="flex items-center gap-3 px-4 py-2.5 text-[11px] tracking-[0.15em] uppercase text-[#E8CE8C] bg-[#C9A24A]/10"
+                    >
+                      <span className="text-[16px]">🇨🇷</span>
+                      <span>Español</span>
+                    </a>
+                    <a
+                      href="/en/"
+                      className="flex items-center gap-3 px-4 py-2.5 text-[11px] tracking-[0.15em] uppercase text-[#F2E9D8]/60 hover:text-[#E8CE8C] hover:bg-[#C9A24A]/5 transition-colors"
+                    >
+                      <span className="text-[16px]">🇺🇸</span>
+                      <span>English</span>
+                    </a>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
           <button aria-label="Menu" onClick={() => setOpen(o => !o)} className="md:hidden"><Ico.Menu className="w-5 h-5"/></button>
         </div>
       </div>
