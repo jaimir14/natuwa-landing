@@ -93,6 +93,7 @@ const Ico = {
   IG:    (p) => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" {...p}><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".8" fill="currentColor"/></svg>),
   X:     (p) => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" {...p}><path d="M4 4l16 16M20 4L4 20"/></svg>),
   Pin:   (p) => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" {...p}><path d="M12 22s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>),
+  WhatsApp: (p) => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/><path d="M16.5 16c-.3.8-1.5 1.5-2.2 1.6-.7.1-1.4.1-2.4-.3-2.6-1-4.7-3.1-5.7-5.7-.3-1-.4-1.8-.3-2.4.1-.8.8-1.9 1.6-2.2.4-.2.8-.2 1.2 0 .4.2.5.5.7 1 .2.6.4 1 .5 1.2.2.3.2.6 0 .9-.1.2-.2.3-.4.6-.2.2-.3.4-.1.7.5.8 1.1 1.5 1.8 2 .4.3.7.2.9 0 .3-.3.6-.7.8-.9.3-.3.6-.3.9-.1.3.1.9.4 1.1.5.2.1.4.2.5.4.1.3.1.9-.2 1.5z"/></svg>),
 };
 
 // ─── Shimmer gold button ──────────────────────────────────────────────────
@@ -779,9 +780,12 @@ function Footer() {
             <div>
               <h3 className="text-[#E8CE8C] font-display text-xl mb-3">1. Shipping Policy</h3>
               <ul className="list-disc pl-5 space-y-2">
-                <li><strong>Service Area:</strong> Local delivery exclusively in <strong>Liberia, Guanacaste</strong>. No nationwide or international shipping available at this time.</li>
-                <li><strong>Timeframes:</strong> 1 to 2 business days after payment confirmation (Monday-Friday).</li>
-                <li><strong>Failed Deliveries:</strong> The delivery driver will wait a maximum of 15 minutes. If the customer cannot be reached, the order will be returned, and rescheduling may incur additional shipping costs.</li>
+                <li><strong>Coverage:</strong> We ship throughout <strong>all of Costa Rica</strong> via <strong>Correos de Costa Rica</strong> (Costa Rica's national postal service). International shipping is not available at this time.</li>
+                <li><strong>Shipping Cost:</strong> A flat shipping fee of <strong>$7.00 USD</strong> is applied per order. This fee covers Correos de Costa Rica rates and may be modified without prior notice. The shipping cost is added to your order total and clearly displayed before completing your payment.</li>
+                <li><strong>Processing Time:</strong> Once payment is confirmed, we prepare and dispatch your order within <strong>2 business days</strong> (Monday–Friday).</li>
+                <li><strong>Delivery:</strong> After dispatch, your package will be delivered by Correos de Costa Rica. Delivery times will vary depending on your destination zone, as determined by the postal service.</li>
+                <li><strong>Tracking:</strong> Once your order has been shipped, we will provide you with a Correos de Costa Rica tracking number so you can follow your package.</li>
+                <li><strong>Taxes:</strong> All displayed prices include applicable taxes. No additional tax charges will be applied at the time of payment.</li>
               </ul>
             </div>
 
@@ -790,6 +794,7 @@ function Footer() {
               <ul className="list-disc pl-5 space-y-2">
                 <li><strong>Coffee (Perishable):</strong> For food safety, we do not accept returns. Exceptions apply only if the incorrect item is sent or the packaging has severe manufacturing defects.</li>
                 <li><strong>Claims:</strong> All damage claims must be reported to <a href="mailto:soporte@natuwacr.com" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C]">soporte@natuwacr.com</a> within 48 hours of delivery, attaching photographic evidence.</li>
+                <li><strong>Refunds via PayPal:</strong> If your purchase was made with PayPal and a refund is approved, the amount will be returned directly to your PayPal account or original payment method. This applies only in cases where a refund is warranted under these policies. For more information on PayPal's dispute process, visit the <a href="https://www.paypal.com/us/smarthelp/article/how-do-i-open-a-dispute-with-a-seller-when-a-purchase-goes-wrong-faq1741" target="_blank" rel="noopener noreferrer" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C]">PayPal Resolution Center</a>.</li>
               </ul>
             </div>
 
@@ -812,7 +817,16 @@ function Footer() {
             </div>
 
             <div>
-              <h3 className="text-[#E8CE8C] font-display text-xl mb-3">5. Site Use and Privacy</h3>
+              <h3 className="text-[#E8CE8C] font-display text-xl mb-3">5. Payment Security — PayPal</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Secure Payments:</strong> We offer the option to pay with <strong>PayPal</strong>, one of the world's most trusted and secure online payment platforms. Your financial details are never shared with us; PayPal processes all payments with end-to-end encryption.</li>
+                <li><strong>Buyer Protection:</strong> Eligible purchases made with PayPal may be covered by <a href="https://www.paypal.com/us/webapps/mpp/paypal-safety-and-security" target="_blank" rel="noopener noreferrer" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C]">PayPal's Buyer Protection Program</a>. This may apply if an item doesn't arrive or doesn't match the description. Visit PayPal's website directly to verify eligibility and terms.</li>
+                <li><strong>PayPal Disputes:</strong> If an issue arises with your purchase that could not be resolved directly with us, you may open a dispute through the <a href="https://www.paypal.com/us/smarthelp/article/how-do-i-open-a-dispute-with-a-seller-when-a-purchase-goes-wrong-faq1741" target="_blank" rel="noopener noreferrer" className="text-[#E8CE8C] border-b border-[#C9A24A]/40 hover:border-[#E8CE8C]">PayPal Resolution Center</a> within 180 days of the payment date.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-[#E8CE8C] font-display text-xl mb-3">6. Site Use and Privacy</h3>
               <ul className="list-disc pl-5 space-y-2">
                 <li><strong>Intellectual Property:</strong> All content on this site (text, logos, images) is the exclusive property of Natural Way Coffee. Reproduction for commercial purposes is prohibited.</li>
                 <li><strong>Privacy:</strong> Customer data (name, address, email, phone) is handled with absolute confidentiality solely for processing your order.</li>
@@ -828,28 +842,97 @@ function Footer() {
   );
 }
 
+// ─── PayPal Integration ───────────────────────────────────────────────────
+function PayPalCheckout({ total, onSuccess, onError, onValidationFail }) {
+  const paypalRef = useRef(null);
+
+  useEffect(() => {
+    if (window.paypal && paypalRef.current && paypalRef.current.children.length === 0) {
+      window.paypal.Buttons({
+        style: {
+          layout: 'vertical',
+          color: 'gold',
+          shape: 'rect',
+          label: 'paypal',
+          height: 40,
+          tagline: false
+        },
+        onClick: (data, actions) => {
+          const form = document.getElementById("order-form");
+          if (form && !form.checkValidity()) {
+            form.reportValidity();
+            if (onValidationFail) onValidationFail(true);
+            return actions.reject();
+          }
+          if (onValidationFail) onValidationFail(false);
+          return actions.resolve();
+        },
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: total.toString()
+              }
+            }],
+            application_context: {
+              shipping_preference: 'NO_SHIPPING'
+            }
+          });
+        },
+        onApprove: (data, actions) => {
+          return actions.order.capture().then((details) => {
+             if (onSuccess) onSuccess(details);
+          });
+        },
+        onError: (err) => {
+          if (onError) onError(err);
+        }
+      }).render(paypalRef.current);
+    }
+  }, [total, onSuccess, onError]);
+
+  return <div ref={paypalRef} className="w-full relative z-10" />;
+}
+
 // ─── Cart drawer (tiny) ───────────────────────────────────────────────────
-function CartDrawer({ open, onClose, items, onRemove, onClear }) {
+function CartDrawer({ open, onClose, items, onRemove, onOrderSuccess }) {
   const [isCheckout, setIsCheckout] = useState(false);
+  const [payMethod, setPayMethod] = useState('manual');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [addressData, setAddressData] = useState(null);
+  const [selectedProvKey, setSelectedProvKey] = useState('');
+  const [selectedCantonKey, setSelectedCantonKey] = useState('');
+  const [selectedDistritoName, setSelectedDistritoName] = useState('');
+
+  useEffect(() => {
+    fetch('../assets/cr-address.json')
+      .then(res => res.json())
+      .then(data => setAddressData(data.provincias))
+      .catch(err => console.error('Error loading address data:', err));
+  }, []);
+
   const total = items.reduce((a, b) => a + b.price, 0);
 
   useEffect(() => {
-    if (!open) {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
       setIsCheckout(false);
       setSubmitStatus(null);
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [open]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const submitFormDirectly = async (formData) => {
     setIsSubmitting(true);
     setSubmitStatus(null);
-    const form = e.currentTarget;
     try {
-      const formData = new FormData(form);
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
@@ -857,8 +940,8 @@ function CartDrawer({ open, onClose, items, onRemove, onClear }) {
       const data = await response.json();
       if (response.ok) {
         setSubmitStatus('success');
-        form.reset();
-        if (onClear) onClear();
+        document.getElementById("order-form").reset();
+        if (onOrderSuccess) onOrderSuccess();
       } else {
         setSubmitStatus('error');
         setErrorMessage(data.message || 'Failed to send order');
@@ -871,19 +954,53 @@ function CartDrawer({ open, onClose, items, onRemove, onClear }) {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    submitFormDirectly(new FormData(e.currentTarget));
+  };
+
+  const handlePaypalSuccess = (details) => {
+    const form = document.getElementById("order-form");
+    if(form) {
+      const formData = new FormData(form);
+      formData.set("Payment_Status", "PAID WITH PAYPAL");
+      formData.set("PayPal_Order_ID", details.id);
+      
+      const captureId = details.purchase_units?.[0]?.payments?.captures?.[0]?.id;
+      if (captureId) {
+         formData.set("PayPal_Transaction_ID", captureId);
+      }
+      
+      const payer = details.payer;
+      if (payer) {
+        if (payer.name && !formData.get("name")) {
+          formData.set("name", `${payer.name.given_name || ''} ${payer.name.surname || ''}`.trim());
+        }
+        if (payer.email_address && !formData.get("email")) {
+          formData.set("email", payer.email_address);
+        }
+        if (payer.phone?.phone_number && !formData.get("phone")) {
+          formData.set("phone", payer.phone.phone_number.national_number);
+        }
+      }
+      
+      submitFormDirectly(formData);
+    }
+  };
+
   return (
-    <div className={`fixed inset-0 z-[60] transition-opacity duration-500 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+    <div className={`fixed inset-0 h-[100dvh] z-[60] transition-opacity duration-500 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
       <div className="absolute inset-0 bg-black/60" onClick={onClose}/>
-      <aside className={`absolute top-0 right-0 h-full w-full max-w-md bg-[#0F1713] border-l border-[#C9A24A]/25 p-8 transition-transform duration-500 flex flex-col ${open ? "translate-x-0" : "translate-x-full"}`}>
-        
-        <div className="flex items-center justify-between shrink-0 mb-6">
+      <aside className={`absolute top-0 right-0 h-full w-full max-w-md bg-[#0F1713] border-l border-[#C9A24A]/25 transition-transform duration-500 flex flex-col ${open ? "translate-x-0" : "translate-x-full"}`}>
+        <div className="shrink-0 bg-[#0F1713] px-6 sm:px-8 pt-6 sm:pt-8 pb-4 flex items-center justify-between border-b border-[#C9A24A]/15">
           <div className="text-[#C9A24A] text-[11px] tracking-[0.4em] uppercase">
             {isCheckout ? "Complete Order" : "Your Reserve"}
           </div>
           <button onClick={onClose} className="text-[#F2E9D8]/70 hover:text-[#E8CE8C]"><Ico.X className="w-5 h-5"/></button>
         </div>
         
-        <div className="mt-2 flex-1 overflow-y-auto space-y-6 pr-2">
+        <div className="flex-1 overflow-y-auto overscroll-contain">
+          <div className="px-6 sm:px-8 pt-6 pb-2 space-y-6">
           {!isCheckout ? (
             <>
               {items.length === 0 && (
@@ -910,12 +1027,6 @@ function CartDrawer({ open, onClose, items, onRemove, onClear }) {
                 Please enter your details so we can coordinate payment and delivery. Your order includes {items.length} product(s).
               </div>
               <form id="order-form" onSubmit={handleSubmit} className="space-y-6">
-                {submitStatus === 'success' && (
-                  <div className="flex items-center gap-3 rounded-sm border border-green-500/40 bg-green-500/10 px-4 py-3 text-[12px] text-green-400">
-                    <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span>Order sent! We will contact you shortly.</span>
-                  </div>
-                )}
                 {submitStatus === 'error' && (
                   <div className="flex items-center gap-3 rounded-sm border border-red-500/40 bg-red-500/10 px-4 py-3 text-[12px] text-red-400">
                     <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -925,24 +1036,113 @@ function CartDrawer({ open, onClose, items, onRemove, onClear }) {
                 <input type="hidden" name="access_key" value="519d0b3b-0767-42fa-94ed-5b31a27514a3" />
                 <input type="hidden" name="subject" value="New Order - Natural Way Coffee" />
                 <input type="hidden" name="order_items" value={items.map(i => `${i.name} ($${i.price})`).join(' | ')} />
-                <input type="hidden" name="order_total" value={`$${total}.00`} />
+                <input type="hidden" name="order_subtotal" value={`$${total}.00`} />
+                <input type="hidden" name="order_shipping" value="$7.00 (Correos de Costa Rica)" />
+                <input type="hidden" name="order_total" value={`$${total + 7}.00`} />
                 <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
                 
-                <input type="text" name="name" required placeholder="Full name" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
-                <input type="email" name="email" required placeholder="Email address" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
-                
-                <input type="tel" name="phone" required placeholder="Phone number (with country code, e.g. +1)" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
-                
-                <textarea name="message" placeholder="Additional comments or delivery instructions..." rows="2" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors resize-none"></textarea>
+                <div className="flex flex-col gap-2">
+                  <div className="text-[#F2E9D8]/60 text-[11px] tracking-[0.3em] uppercase">Payment Method</div>
+                  <div className="flex gap-4">
+                    <label className="flex items-center gap-2 text-[13px] text-[#F2E9D8]/80 cursor-pointer">
+                      <input type="radio" name="paymentMethod" value="manual" checked={payMethod === 'manual'} onChange={() => setPayMethod('manual')} className="accent-[#C9A24A]" />
+                      Wire Transfer / SINPE
+                    </label>
+                    <label className="flex items-center gap-2 text-[13px] text-[#F2E9D8]/80 cursor-pointer">
+                      <input type="radio" name="paymentMethod" value="paypal" checked={payMethod === 'paypal'} onChange={() => setPayMethod('paypal')} className="accent-[#C9A24A]" />
+                      PayPal
+                    </label>
+                  </div>
+                </div>
+
+                {payMethod !== 'paypal' ? (
+                  <div className="space-y-4">
+                    <div className="text-[#C9A24A]/70 text-[10px] tracking-[0.1em] uppercase border-b border-[#C9A24A]/20 pb-1">* Personal Data</div>
+                    <input type="text" name="name" required placeholder="Full name" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
+                    <input type="email" name="email" required placeholder="Email address" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
+                    <input type="tel" name="phone" required placeholder="Phone number" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    <div className="text-[#C9A24A]/70 text-[10px] tracking-[0.1em] uppercase border-b border-[#C9A24A]/20 pb-1">* Contact Details</div>
+                    <div className="text-[#F2E9D8]/40 text-[11px] leading-relaxed">Your name and email will be retrieved from your PayPal account.</div>
+                    <input type="tel" name="phone" required placeholder="Contact phone number" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
+                  </div>
+                )}
+
+                <div className="space-y-4">
+                  <div className="text-[#C9A24A]/70 text-[10px] tracking-[0.1em] uppercase border-b border-[#C9A24A]/20 pb-1">* Delivery Address (Costa Rica Only)</div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="relative">
+                      <select 
+                        value={selectedProvKey} 
+                        onChange={e => { setSelectedProvKey(e.target.value); setSelectedCantonKey(''); setSelectedDistritoName(''); }}
+                        required 
+                        className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C]"
+                      >
+                        <option value="" disabled className="bg-[#0F1713]">Province</option>
+                        {addressData && Object.entries(addressData).map(([key, prov]) => (
+                          <option key={key} value={key} className="bg-[#0F1713]">{prov.nombre}</option>
+                        ))}
+                      </select>
+                      <input type="hidden" name="provincia" value={selectedProvKey && addressData ? addressData[selectedProvKey].nombre : ''} />
+                    </div>
+                    <div className="relative">
+                      <select 
+                        value={selectedCantonKey} 
+                        onChange={e => { setSelectedCantonKey(e.target.value); setSelectedDistritoName(''); }}
+                        required 
+                        disabled={!selectedProvKey}
+                        className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] disabled:opacity-50"
+                      >
+                        <option value="" disabled className="bg-[#0F1713]">Canton</option>
+                        {selectedProvKey && addressData?.[selectedProvKey]?.cantones && Object.entries(addressData[selectedProvKey].cantones).map(([key, canton]) => (
+                          <option key={key} value={key} className="bg-[#0F1713]">{canton.nombre}</option>
+                        ))}
+                      </select>
+                      <input type="hidden" name="canton" value={selectedCantonKey && addressData && selectedProvKey ? addressData[selectedProvKey].cantones[selectedCantonKey].nombre : ''} />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="relative">
+                      <select 
+                        name="distrito"
+                        value={selectedDistritoName} 
+                        onChange={e => setSelectedDistritoName(e.target.value)}
+                        required 
+                        disabled={!selectedCantonKey}
+                        className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] disabled:opacity-50"
+                      >
+                        <option value="" disabled className="bg-[#0F1713]">District</option>
+                        {selectedCantonKey && addressData?.[selectedProvKey]?.cantones?.[selectedCantonKey]?.distritos && Object.entries(addressData[selectedProvKey].cantones[selectedCantonKey].distritos).map(([key, name]) => (
+                          <option key={key} value={name} className="bg-[#0F1713]">{name}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <input type="text" name="codigo_postal" required placeholder="Zip Code" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors" />
+                  </div>
+                  <textarea name="direccion_exacta" required placeholder="Exact address details..." rows="2" className="w-full bg-transparent border-b border-[#C9A24A]/40 pb-2 text-[#F2E9D8] text-[13px] focus:outline-none focus:border-[#E8CE8C] placeholder-[#F2E9D8]/40 transition-colors resize-none"></textarea>
+                </div>
               </form>
             </div>
           )}
         </div>
 
-        <div className="shrink-0 border-t border-[#C9A24A]/30 pt-6 mt-4">
-          <div className="flex items-center justify-between mb-4">
-            <div className="text-[#F2E9D8]/60 text-[11px] tracking-[0.3em] uppercase">Subtotal</div>
-            <div className="font-display text-[#F2E9D8] text-[22px]">${total}.00</div>
+        <div className="px-6 sm:px-8 pb-8 border-t border-[#C9A24A]/30 pt-6">
+          <div className="space-y-2 mb-4">
+            <div className="flex items-center justify-between">
+              <div className="text-[#F2E9D8]/60 text-[11px] tracking-[0.3em] uppercase">Subtotal</div>
+              <div className="text-[#F2E9D8] text-[16px]">${total}.00</div>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="text-[#F2E9D8]/60 text-[11px] tracking-[0.3em] uppercase">Shipping (Correos CR)</div>
+              <div className="text-[#F2E9D8] text-[16px]">$7.00</div>
+            </div>
+            <div className="flex items-center justify-between border-t border-[#C9A24A]/20 pt-2 mt-2">
+              <div className="text-[#F2E9D8]/80 text-[11px] tracking-[0.3em] uppercase font-semibold">Total</div>
+              <div className="font-display text-[#E8CE8C] text-[22px]">${total + 7}.00</div>
+            </div>
+            <div className="text-[#F2E9D8]/35 text-[10px] tracking-[0.15em]">Taxes included · Shipped via Correos de Costa Rica</div>
           </div>
           
           {!isCheckout ? (
@@ -955,17 +1155,42 @@ function CartDrawer({ open, onClose, items, onRemove, onClear }) {
               {items.length > 0 && <Ico.Arrow className="w-3.5 h-3.5"/>}
             </button>
           ) : (
-            <div className="flex gap-3">
-              <button disabled={isSubmitting} onClick={() => setIsCheckout(false)} className="w-1/3 border border-[#C9A24A]/30 hover:border-[#C9A24A] text-[#C9A24A] text-[10px] tracking-[0.2em] uppercase py-4 font-semibold transition-colors disabled:opacity-50">
-                Back
-              </button>
-              <button disabled={isSubmitting} form="order-form" type="submit" className="flex-1 bg-[#C9A24A] hover:bg-[#E8CE8C] text-[#111915] text-[11px] tracking-[0.2em] uppercase py-4 font-semibold transition-colors flex justify-center items-center gap-2 disabled:opacity-50">
-                {isSubmitting ? "Sending..." : "Submit Order"} {!isSubmitting && <Ico.Arrow className="w-3.5 h-3.5"/>}
-              </button>
+            <div className="flex flex-col gap-3">
+              {payMethod === 'paypal' ? (
+                <>
+                  <div className={isSubmitting ? "opacity-50 pointer-events-none" : "bg-white p-3 rounded-md shadow-sm"}>
+                    <PayPalCheckout 
+                      total={total + 7} 
+                      onSuccess={handlePaypalSuccess} 
+                      onError={() => { setSubmitStatus('error'); setErrorMessage('Error processing PayPal payment. Please try again.'); }} 
+                      onValidationFail={(failed) => {
+                        if (failed) {
+                           setSubmitStatus('error');
+                           setErrorMessage('Please complete all required fields above before paying with PayPal.');
+                        } else if (submitStatus === 'error') {
+                           setSubmitStatus(null);
+                        }
+                      }}
+                    />
+                  </div>
+                  <button type="button" disabled={isSubmitting} onClick={() => setIsCheckout(false)} className="w-full border border-[#C9A24A]/30 hover:border-[#C9A24A] text-[#C9A24A] text-[10px] tracking-[0.2em] uppercase py-4 font-semibold transition-colors disabled:opacity-50 mt-1">
+                    Back
+                  </button>
+                </>
+              ) : (
+                <div className="flex gap-3">
+                  <button type="button" disabled={isSubmitting} onClick={() => setIsCheckout(false)} className="w-1/3 border border-[#C9A24A]/30 hover:border-[#C9A24A] text-[#C9A24A] text-[10px] tracking-[0.2em] uppercase py-4 font-semibold transition-colors disabled:opacity-50">
+                    Back
+                  </button>
+                  <button disabled={isSubmitting} form="order-form" type="submit" className="flex-1 bg-[#C9A24A] hover:bg-[#E8CE8C] text-[#111915] text-[11px] tracking-[0.2em] uppercase py-4 font-semibold transition-colors flex justify-center items-center gap-2 disabled:opacity-50">
+                    {isSubmitting ? "Sending..." : "Submit Order"} {!isSubmitting && <Ico.Arrow className="w-3.5 h-3.5"/>}
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>
-
+        </div>
       </aside>
     </div>
   );
@@ -975,6 +1200,7 @@ function CartDrawer({ open, onClose, items, onRemove, onClear }) {
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cart, setCart] = useState([]);
+  const [orderSuccess, setOrderSuccess] = useState(false);
   return (
     <div className="relative">
       <Nav onCart={() => setCartOpen(true)} cartCount={cart.length} />
@@ -989,8 +1215,35 @@ function App() {
       <CartDrawer
         open={cartOpen} onClose={() => setCartOpen(false)}
         items={cart} onRemove={(i) => setCart(c => c.filter((_, idx) => idx !== i))}
-        onClear={() => setCart([])}
+        onOrderSuccess={() => { setCartOpen(false); setOrderSuccess(true); setCart([]); }}
       />
+      {orderSuccess && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setOrderSuccess(false)}></div>
+          <div className="relative bg-[#111915] border border-[#C9A24A]/30 max-w-2xl w-full p-10 md:p-14 shadow-2xl text-center">
+            <button onClick={() => setOrderSuccess(false)} className="absolute top-6 right-6 text-[#F2E9D8]/50 hover:text-[#E8CE8C] transition-colors">
+              <Ico.X className="w-6 h-6"/>
+            </button>
+            <div className="mx-auto w-16 h-16 rounded-full border border-[#C9A24A]/40 flex items-center justify-center mb-6">
+              <Ico.Leaf className="w-8 h-8 text-[#C9A24A]" />
+            </div>
+            <h3 className="font-display text-[#E8CE8C] text-[32px] md:text-[42px] leading-tight mb-4">Thank you for your support!</h3>
+            <p className="text-[#F2E9D8]/70 text-[15px] leading-relaxed mb-8 max-w-lg mx-auto">
+              Your order has been successfully processed. It is an honor for us to bring the essence of the forest to your cup.<br/><br/>
+              We will contact you shortly to coordinate the delivery. If you have any questions in the meantime, please do not hesitate to contact us:
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="mailto:soporte@natuwacr.com" className="flex items-center justify-center gap-3 px-6 py-3 border border-[#C9A24A]/30 hover:border-[#E8CE8C] text-[#F2E9D8] text-[11px] tracking-[0.2em] uppercase transition-colors">
+                soporte@natuwacr.com
+              </a>
+              <a href="https://wa.me/50683186803" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 px-6 py-3 bg-[#C9A24A] hover:bg-[#E8CE8C] text-[#111915] text-[11px] tracking-[0.2em] uppercase transition-colors font-semibold">
+                <Ico.WhatsApp className="w-5 h-5" />
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
